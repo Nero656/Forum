@@ -1,3 +1,2 @@
 # forum
- 
-Коллекции json ляжат в папке postman rep
+Коллекции json лежат в папке postman rep
