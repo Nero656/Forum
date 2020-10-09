@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "60040de5-dc72-4f59-9e44-d97017fcd05b",
+		"name": "Forum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pages",
+			"item": [
+				{
+					"name": "content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}posts",
+							"host": [
+								"{{path}}posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePosts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Пост",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Пост",
+									"type": "text"
+								},
+								{
+									"key": "like",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "create_at",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{path}}post/2",
+							"host": [
+								"{{path}}post"
+							],
+							"path": [
+								"2"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "6",
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление поста",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}post/delete/2",
+							"host": [
+								"{{path}}post"
+							],
+							"path": [
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "обновление субъекта",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "patch",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "Пост изменён",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "текст изм",
+									"type": "text"
+								},
+								{
+									"key": "like",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{path}}post/update/1",
+							"host": [
+								"{{path}}post"
+							],
+							"path": [
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Топ постов",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}post/popular/5",
+							"host": [
+								"{{path}}post"
+							],
+							"path": [
+								"popular",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Nero",
+							"type": "text"
+						},
+						{
+							"key": "login",
+							"value": "Nero",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Nero",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Nero",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{path}}user",
+					"host": [
+						"{{path}}user"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Fraiy",
+							"disabled": true
+						},
+						{
+							"key": "login",
+							"value": "Fraiy",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "Fraiy@Fraiy.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "Fraiy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "Nero",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Nero",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{path}}login",
+					"host": [
+						"{{path}}login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{path}}logout",
+					"host": [
+						"{{path}}logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Посты",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}post/popular",
+					"host": [
+						"{{path}}post"
+					],
+					"path": [
+						"popular"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
